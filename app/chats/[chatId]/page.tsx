@@ -1,14 +1,13 @@
 import SendMessage from "@/components/send-message";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+
 import ChatList from "@/components/ui/message-chat";
 import MessagePreviewCompo from "@/components/ui/message-preview";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { sampleMessages } from "@/sampleMessage";
 import { Inter } from "next/font/google";
 
 import { FaChevronDown } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
 
 const interFont = Inter({
   subsets: ["latin"],
@@ -29,8 +28,8 @@ const ChatsPage = async ({
   const name = chatObj?.name;
   const chatMsg = chatObj?.message;
   return (
-    <div className="bg-[#eff0eb] w-full h-screen flex ">
-      <div className="w-[30%] bg-[#fafaf7] m-4 rounded-2xl  overflow-y-scroll">
+    <div className="bg-[#eff0eb] grid grid-cols-[350px_1fr] h-screen gap-2">
+      <div className=" bg-[#fafaf7] m-4 rounded-2xl  overflow-y-scroll">
         <div className="border-b-1 border-neutral-300 h-16 flex items-center">
           <span
             className={cn("font-semibold text-2xl ml-6", interFont.className)}
@@ -66,9 +65,9 @@ const ChatsPage = async ({
           ))}
         </div>
       </div>
-      <div className="w-full bg-white my-4 mr-4  rounded-2xl flex flex-col justify-between  p-2">
+      <div className=" bg-white my-4 mr-4  rounded-2xl flex flex-col justify-between  p-2">
         <div>
-          <div className="border-b-1 border-neutral-300 h-16 flex items-center w-full">
+          <div className="border-b-1 border-neutral-300 h-16 flex items-center w-full justify-between">
             <span
               className={cn(
                 "font-semibold text-2xl ml-10",
@@ -77,6 +76,7 @@ const ChatsPage = async ({
             >
               {name}
             </span>
+             <SidebarTrigger className="mr-10" />
           </div>
           <div className="px-6">
             <ChatList message={chatMsg} name={name} />

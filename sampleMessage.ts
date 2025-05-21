@@ -23,6 +23,12 @@ export const sampleMessages=[
         time:"45m",
         id:4
     },
+     {
+        name:"Jay Shende Sample",
+        message:"I Brought a product from your Store",
+        time:"45m",
+        id:5
+    },
   
 ]
 
