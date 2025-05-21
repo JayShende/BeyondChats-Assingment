@@ -13,4 +13,10 @@ const nextConfig: NextConfig = {
   },
 };
 
+module.exports = {
+  images: {
+    domains: ['localhost','randomuser.me'],
+  },
+};
+
 export default nextConfig;
