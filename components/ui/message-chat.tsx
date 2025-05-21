@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import NameAvatar from "./name-avatar";
+import { RobotoFont } from "@/app/font/font-export";
 
 interface messagesProps {
   message: string;
@@ -7,10 +8,6 @@ interface messagesProps {
   date?: string;
 }
 
-import { Roboto } from "next/font/google";
-const RobotoFont=Roboto({
-   subsets: ['latin'], 
-  weight: ['400', "500",'600', '700']})
 
 const ChatList = ({ message, name }: messagesProps) => {
   return (

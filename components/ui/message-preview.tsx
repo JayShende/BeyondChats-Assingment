@@ -1,14 +1,11 @@
 "use client";
 
+import { interFont } from "@/app/font/font-export";
 import NameAvatar from "./name-avatar";
 import { cn } from "@/lib/utils";
-import { Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 
 
-const interFont=Inter({
-   subsets: ['latin'], 
-  weight: ['300','400', '500','600', '700']})
 
 
 interface MessagePreviewCompoProps{

@@ -1,3 +1,4 @@
+import { interFont } from "@/app/font/font-export";
 import SendMessage from "@/components/send-message";
 
 import ChatList from "@/components/ui/message-chat";
@@ -5,15 +6,11 @@ import MessagePreviewCompo from "@/components/ui/message-preview";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { sampleMessages } from "@/sampleMessage";
-import { Inter } from "next/font/google";
 import { useEffect } from "react";
 
 import { FaChevronDown } from "react-icons/fa";
 
-const interFont = Inter({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
+
 
 const ChatsPage = async ({
   params,

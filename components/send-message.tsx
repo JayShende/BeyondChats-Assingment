@@ -4,7 +4,6 @@ import { FaBookmark } from "react-icons/fa";
 import { FaFaceSmile } from "react-icons/fa6";
 import { BsChatLeftTextFill } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
-import { Inter, Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import {
   Tooltip,
@@ -13,16 +12,9 @@ import {
   TooltipContent,
 } from "./ui/tooltip";
 import { useEffect, useRef, useState } from "react";
+import { interFont, RobotoFont } from "@/app/font/font-export";
 
-const interFont = Inter({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
 
-const RobotoFont = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const SendMessage = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
