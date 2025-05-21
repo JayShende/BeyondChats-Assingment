@@ -12,6 +12,14 @@ import { ArrowUp, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { AccordionDetails } from "./accordion-details";
+
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipContent,
+} from "./ui/tooltip";
+
 const CopilotComponent = () => {
   const { toggleSidebar } = useSidebar();
   const [tab, setTab] = useState("copilot");
@@ -24,25 +32,40 @@ const CopilotComponent = () => {
             interFont.className
           )}
         >
-          <div className="flex gap-x-1 items-center">
-            <AiFillRobot className="text-blue-500" />
-            <span
-              className="bg-linear-to-r from-cyan-700 via-blue-500 to-indigo-600 bg-clip-text text-transparent cursor-pointer"
-              onClick={() => {
-                setTab("copilot");
-              }}
-            >
-              AI Copilot
-            </span>
-          </div>
-          <span
-            className="cursor-pointer"
-            onClick={() => {
-              setTab("details");
-            }}
-          >
-            Details
-          </span>
+          <Tooltip>
+            <TooltipTrigger>
+              <div className="flex gap-x-1 items-center">
+                <AiFillRobot className="text-blue-500" />
+                <span
+                  className="bg-linear-to-r from-cyan-700 via-blue-500 to-indigo-600 bg-clip-text text-transparent cursor-pointer"
+                  onClick={() => {
+                    setTab("copilot");
+                  }}
+                >
+                  AI Copilot
+                </span>
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Copilot</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger>
+              <span
+                className="cursor-pointer"
+                onClick={() => {
+                  setTab("details");
+                }}
+              >
+                Details
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Conversation Details</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
         <div className="flex items-center gap-x-3 mr-6">
           <Button
