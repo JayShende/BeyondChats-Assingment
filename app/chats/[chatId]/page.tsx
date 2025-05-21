@@ -2,10 +2,11 @@ import SendMessage from "@/components/send-message";
 
 import ChatList from "@/components/ui/message-chat";
 import MessagePreviewCompo from "@/components/ui/message-preview";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { sampleMessages } from "@/sampleMessage";
 import { Inter } from "next/font/google";
+import { useEffect } from "react";
 
 import { FaChevronDown } from "react-icons/fa";
 
@@ -27,6 +28,7 @@ const ChatsPage = async ({
   });
   const name = chatObj?.name;
   const chatMsg = chatObj?.message;
+
   return (
     <div className="bg-[#eff0eb] grid grid-cols-[350px_1fr] h-screen gap-2">
       <div className=" bg-[#fafaf7] m-4 rounded-2xl  overflow-y-scroll">

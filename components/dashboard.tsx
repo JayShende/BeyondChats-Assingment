@@ -1,13 +1,8 @@
 import { cn } from "@/lib/utils";
-import { Inter } from "next/font/google";
 import MessagePreviewCompo from "./ui/message-preview";
 import { FaChevronDown } from "react-icons/fa";
 import { sampleMessages } from "@/sampleMessage";
-
-
-const interFont=Inter({
-   subsets: ['latin'], 
-  weight: ['400', '600', '700']})
+import { interFont } from "@/app/font/font-export";
 
 
 
