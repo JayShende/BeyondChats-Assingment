@@ -8,6 +8,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/tooltip";
 import { HoverCardChatsHeader } from "./ui/hover-card-chats-header";
+import { SnoozeDialog } from "./ui/snooze-dailog";
 
 const ChatsHeader = () => {
   return (
@@ -29,10 +30,7 @@ const ChatsHeader = () => {
         <IoCall />
         Call
       </Button>
-      <Button variant="secondary" className="cursor-pointer">
-        <GiNightSleep />
-        Snooze
-      </Button>
+     <SnoozeDialog/>
       <Button className="cursor-pointer">
         <HiArrowDownOnSquareStack />
         Close
