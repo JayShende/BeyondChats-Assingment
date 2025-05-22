@@ -12,13 +12,8 @@ import { ArrowUp, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { AccordionDetails } from "./accordion-details";
-
-import {
-  Tooltip,
-  TooltipProvider,
-  TooltipTrigger,
-  TooltipContent,
-} from "./ui/tooltip";
+import { IoOpenSharp } from "react-icons/io5";
+import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/tooltip";
 
 const CopilotComponent = () => {
   const { toggleSidebar } = useSidebar();
@@ -68,21 +63,35 @@ const CopilotComponent = () => {
           </Tooltip>
         </div>
         <div className="flex items-center gap-x-3 mr-6">
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn("size-7")}
-            onClick={() => {
-              toggleSidebar();
-            }}
-          >
-            <VscLayoutSidebarRight />
-          </Button>
+          <Tooltip>
+            <TooltipTrigger>
+              <IoOpenSharp />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Open in new Window</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn("size-7 cursor-pointer")}
+                onClick={() => {
+                  toggleSidebar();
+                }}
+              >
+                <VscLayoutSidebarRight />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Hide Right Menu</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </div>
       {tab == "copilot" ? (
         <>
-          {" "}
           <div
             className={cn(
               "flex-1 p-4 flex flex-col items-center justify-center gap-y-2",
