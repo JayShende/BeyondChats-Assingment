@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
 
 module.exports = {
   images: {
-    domains: ['localhost','randomuser.me'],
+    domains: ['localhost','randomuser.me','static.intercomassets.com'],
   },
 };
 

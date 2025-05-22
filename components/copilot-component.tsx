@@ -65,29 +65,23 @@ const CopilotComponent = () => {
         <div className="flex items-center gap-x-3 mr-6">
           <Tooltip>
             <TooltipTrigger>
-             <LuSquareArrowOutUpRight />
+              <LuSquareArrowOutUpRight />
             </TooltipTrigger>
             <TooltipContent>
               <p>Open in new Window</p>
             </TooltipContent>
           </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn("size-7 cursor-pointer")}
-                onClick={() => {
-                  toggleSidebar();
-                }}
-              >
-                <VscLayoutSidebarRight />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Hide Right Menu</p>
-            </TooltipContent>
-          </Tooltip>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className={cn("size-7 cursor-pointer")}
+            onClick={() => {
+              toggleSidebar();
+            }}
+          >
+            <VscLayoutSidebarRight />
+          </Button>
         </div>
       </div>
       {tab == "copilot" ? (
