@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { VscLayoutSidebarRight } from "react-icons/vsc";
 import { RiTeamFill } from "react-icons/ri";
 import { AiFillRobot } from "react-icons/ai";
+import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { useSidebar } from "./ui/sidebar";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -12,7 +13,6 @@ import { ArrowUp, SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { AccordionDetails } from "./accordion-details";
-import { IoOpenSharp } from "react-icons/io5";
 import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/tooltip";
 
 const CopilotComponent = () => {
@@ -65,7 +65,7 @@ const CopilotComponent = () => {
         <div className="flex items-center gap-x-3 mr-6">
           <Tooltip>
             <TooltipTrigger>
-              <IoOpenSharp />
+             <LuSquareArrowOutUpRight />
             </TooltipTrigger>
             <TooltipContent>
               <p>Open in new Window</p>

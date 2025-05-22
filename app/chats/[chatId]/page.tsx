@@ -1,16 +1,14 @@
 import { interFont } from "@/app/font/font-export";
+import ChatsHeader from "@/components/chats-header";
 import SendMessage from "@/components/send-message";
 
 import ChatList from "@/components/ui/message-chat";
 import MessagePreviewCompo from "@/components/ui/message-preview";
-import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
+
 import { cn } from "@/lib/utils";
 import { sampleMessages } from "@/sampleMessage";
-import { useEffect } from "react";
 
 import { FaChevronDown } from "react-icons/fa";
-
-
 
 const ChatsPage = async ({
   params,
@@ -64,24 +62,20 @@ const ChatsPage = async ({
           ))}
         </div>
       </div>
-      <div className=" bg-white my-4 mr-4  rounded-2xl flex flex-col justify-between  p-2">
-        <div>
-          <div className="border-b-1 border-neutral-300 h-16 flex items-center w-full justify-between">
-            <span
-              className={cn(
-                "font-semibold text-2xl ml-10",
-                interFont.className
-              )}
-            >
-              {name}
-            </span>
-             <SidebarTrigger className="mr-10" />
-          </div>
-          <div className="px-6">
-            <ChatList message={chatMsg} name={name} />
-          </div>
+      <div className=" bg-white my-4 mr-4  rounded-2xl flex flex-col p-2">
+        <div className="border-b-1 border-neutral-300 h-16 flex items-center w-full justify-between">
+          <span
+            className={cn("font-semibold text-2xl ml-10", interFont.className)}
+          >
+            {name}
+          </span>
+          <ChatsHeader />
         </div>
-       <SendMessage/>
+        <div className="px-6 flex-1">
+          <ChatList message={chatMsg} name={name} />
+        </div>
+
+        <SendMessage />
       </div>
     </div>
   );
