@@ -19,7 +19,7 @@ model userChats{
   name              String
   message           String
   lastMsg           String
-  priority          Boolean
+  priority          Boolean @default(false)
   recived_messages  sendMessage[]
 }
 
