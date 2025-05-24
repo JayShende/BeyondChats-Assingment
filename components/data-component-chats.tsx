@@ -24,7 +24,6 @@ const DataComponent = ({ chatId }: DataComponentProps) => {
   const getMessageFromServer = useGetChatMessages(chatId);
 
   const router=useRouter();
-
   if (getMessageFromServer.isError) {
     return <div>Error</div>;
   }

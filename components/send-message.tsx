@@ -13,7 +13,7 @@ import {
 } from "./ui/tooltip";
 import { useEffect, useRef, useState } from "react";
 import { interFont, RobotoFont } from "@/app/font/font-export";
-import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
+import EmojiPicker from "emoji-picker-react";
 import { useSendMessageBack } from "@/app/services/mutations";
 
 interface sendMessageProps{
@@ -75,8 +75,10 @@ const SendMessage = ({
       chatId:chatId
     }
     console.log(data);
-    sendMessageMutation.mutate(data)
+    await sendMessageMutation.mutateAsync(data)
+    setMsg("")
   }
+  
   return (
     <>
       { emojiPicker&& <div className="fixed bottom-51 left-91 z-50">
