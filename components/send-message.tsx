@@ -13,7 +13,7 @@ import {
 } from "./ui/tooltip";
 import { useEffect, useRef, useState } from "react";
 import { interFont, RobotoFont } from "@/app/font/font-export";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { useSendMessageBack } from "@/app/services/mutations";
 
 interface sendMessageProps{
