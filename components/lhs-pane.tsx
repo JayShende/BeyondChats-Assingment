@@ -19,7 +19,7 @@ const getAllChatsLHS = useGetAllChats();
     return <div>Some Error</div>;
   }
     return (
-    <div className="w-[30%] bg-[#fafaf7] m-4 rounded-2xl  overflow-y-scroll">
+    <div className="sm:w-[30%] w-full bg-[#fafaf7] m-4 rounded-2xl  overflow-y-scroll">
         <div className="border-b-1 border-neutral-300 h-16 flex items-center">
           <span
             className={cn("font-semibold text-2xl ml-6", interFont.className)}

@@ -16,7 +16,7 @@ export function SnoozeDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-         <Button variant="secondary" className="cursor-pointer"><GiNightSleep />Snooze</Button>
+         <Button variant="secondary" className="cursor-pointer"><GiNightSleep /> <span className="hidden sm:block"> Snooze</span></Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

@@ -12,28 +12,28 @@ import { SnoozeDialog } from "./ui/snooze-dailog";
 
 const ChatsHeader = () => {
   return (
-    <div className="flex gap-x-2 mr-4">
+    <div className=" flex gap-x-2 mr-4">
       <Tooltip>
         <TooltipTrigger>
-          <MdOutlineStarPurple500 className="fill-amber-300 " />
+          <MdOutlineStarPurple500 className="fill-amber-300 hidden sm:block" />
           {/* change star based upon weather marked as imp or not */}
         </TooltipTrigger>
         <TooltipContent>
           <p>Mark Priority</p>
         </TooltipContent>
       </Tooltip>
-      <Button variant="secondary" className="cursor-pointer">
+      <Button variant="secondary" className="cursor-pointer hidden sm:block">
         <HiDotsHorizontal />
       </Button>
-      <HoverCardChatsHeader />
+      <HoverCardChatsHeader  />
       <Button variant="secondary" className="cursor-pointer">
         <IoCall />
-        Call
+       <span className="hidden sm:block"> Call</span>
       </Button>
      <SnoozeDialog/>
       <Button className="cursor-pointer">
         <HiArrowDownOnSquareStack />
-        Close
+       <span className="hidden sm:block"> Close</span>
       </Button>
 
       <SidebarTrigger className="cursor-pointer" />

@@ -22,7 +22,7 @@ const DashBoardMain = () => {
   return (
     <div className="bg-[#eff0eb] w-full h-full flex ">
       <LhsPane/>
-      <div className="w-full bg-white my-4 mr-4  rounded-2xl flex flex-col items-center justify-center gap-y-3 ">
+      <div className="w-full bg-white my-4 mr-4  rounded-2xl hidden flex-col items-center justify-center gap-y-3 sm:flex ">
         <img
           src="https://static.intercomassets.com/ember/assets/images/inbox2/channels/empty-state-channels-banner-310d260ac0628d05716f8039ee9693e4.png"
           alt="lhs image"

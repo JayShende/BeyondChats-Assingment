@@ -84,7 +84,7 @@ const SendMessage = ({
       </div>}
       <TooltipProvider>
         <Tooltip>
-          <div className=" relative flex gap-x-2 p-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] w-full h-auto  my-1 rounded-lg flex-col justify-between ">
+          <div className=" relative flex gap-x-2 p-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] w-full sm:h-auto h-44  my-1 rounded-lg flex-col justify-between ">
             <div className="flex gap-x-2 items-center hover:text-red-500 cursor-pointer w-fit">
               <BsChatLeftTextFill />
               <span className={cn("font-medium ", interFont.className)}>

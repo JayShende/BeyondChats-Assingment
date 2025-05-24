@@ -96,11 +96,11 @@ const CopilotComponent = () => {
             <span className="text-xl font-bold">
               Hi, I&apos;m Fin AI Copilot
             </span>
-            <span className="text-muted-foreground font-medium">
+            <span className="text-muted-foreground font-medium sm:ml-0 ml-5">
               Ask Me Anything about this conversation
             </span>
           </div>
-          <div className="p-4 border-t border-gray-200 bg-gray-50">
+          <div className="p-4 border-t border-gray-200 bg-gray-50 sm:mb-0 mb-10">
             <div className="flex items-center space-x-2 bg-white border border-input rounded-lg p-1 focus-within:ring-2 focus-within:ring-ring focus-within:border-primary">
               <Input
                 type="text"
