@@ -1,17 +1,14 @@
 
 import DataComponent from "@/components/data-component-chats";
 
-const ChatsPage = async ({
-  params,
-}: {
-  params: Promise<{ chatId: number }>;
-}) => {
-  const chatId = Number((await params).chatId );
-  
+const ChatsPage = async ({params,}: {params: Promise<{ chatId: number }>}) => {
 
-  return (
-    <DataComponent chatId={chatId} />
-  );
+    const chatId = Number((await params).chatId );
+    return (
+      <DataComponent chatId={chatId} />
+    );
 };
 
 export default ChatsPage;
+
+//  Extracting the chatId from the Dynamic Route

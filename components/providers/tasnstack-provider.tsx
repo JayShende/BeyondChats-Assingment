@@ -23,3 +23,5 @@ export const TanstackProvider = ({ children }: TanstackProviderProps) => {
     </QueryClientProvider>
   );
 };
+
+//  Tanstack Provider to wrap around the root component

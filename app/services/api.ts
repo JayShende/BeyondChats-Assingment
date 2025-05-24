@@ -38,7 +38,6 @@ export const getSentMessage=async(chatId:number)=>{
 
 
 // the below endpoint fetches the user chat according to the chatId
-
 export const getChatMessages=async(chatId:number)=>{
 
     const response=await axios({

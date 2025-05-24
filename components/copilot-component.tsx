@@ -6,40 +6,45 @@ import { VscLayoutSidebarRight } from "react-icons/vsc";
 import { RiTeamFill } from "react-icons/ri";
 import { AiFillRobot } from "react-icons/ai";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
+
 import { useSidebar } from "./ui/sidebar";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { ArrowUp, SlidersHorizontal } from "lucide-react";
-import { useState } from "react";
-import Image from "next/image";
 import { AccordionDetails } from "./accordion-details";
 import { Tooltip, TooltipTrigger, TooltipContent } from "./ui/tooltip";
 
+import { useState } from "react";
+import Image from "next/image";
+
 const CopilotComponent = () => {
+
   const { toggleSidebar } = useSidebar();
   const [tab, setTab] = useState("copilot");
+
   return (
+
     <div className="w-full h-full flex flex-col ">
+
       <div className="w-full border-b-1 border-neutral-300 h-16 h-16px flex justify-between">
-        <div
-          className={cn(
-            "flex items-center gap-x-4 ml-6 font-bold",
-            interFont.className
-          )}
-        >
+        <div className={cn("flex items-center gap-x-4 ml-6 font-bold",interFont.className)}>
+
           <Tooltip>
             <TooltipTrigger>
               <div className="flex gap-x-1 items-center">
+
                 <AiFillRobot className="text-blue-500" />
-                <span
-                  className="bg-linear-to-r from-cyan-700 via-blue-500 to-indigo-600 bg-clip-text text-transparent cursor-pointer"
+
+                <span className="bg-linear-to-r from-cyan-700 via-blue-500 to-indigo-600 bg-clip-text text-transparent cursor-pointer"
                   onClick={() => {
                     setTab("copilot");
                   }}
                 >
                   AI Copilot
                 </span>
+
               </div>
+
             </TooltipTrigger>
             <TooltipContent>
               <p>Copilot</p>
@@ -48,8 +53,7 @@ const CopilotComponent = () => {
 
           <Tooltip>
             <TooltipTrigger>
-              <span
-                className="cursor-pointer"
+              <span className="cursor-pointer"
                 onClick={() => {
                   setTab("details");
                 }}
@@ -61,8 +65,11 @@ const CopilotComponent = () => {
               <p>Conversation Details</p>
             </TooltipContent>
           </Tooltip>
+
         </div>
+
         <div className="flex items-center gap-x-3 mr-6">
+
           <Tooltip>
             <TooltipTrigger>
               <LuSquareArrowOutUpRight />
@@ -82,24 +89,24 @@ const CopilotComponent = () => {
           >
             <VscLayoutSidebarRight />
           </Button>
+
         </div>
+
       </div>
+
       {tab == "copilot" ? (
         <>
-          <div
-            className={cn(
-              "flex-1 p-4 flex flex-col items-center justify-center gap-y-2",
-              RobotoFont.className
-            )}
-          >
+          <div className={cn("flex-1 p-4 flex flex-col items-center justify-center gap-y-2",RobotoFont.className)}>
+
             <AiFillRobot className="text-blue-500 text-4xl" />
             <span className="text-xl font-bold">
-              Hi, I&apos;m Fin AI Copilot
+                Hi, I&apos;m Fin AI Copilot
             </span>
             <span className="text-muted-foreground font-medium sm:ml-0 ml-5">
-              Ask Me Anything about this conversation
+                Ask Me Anything about this conversation
             </span>
           </div>
+
           <div className="p-4 border-t border-gray-200 bg-gray-50 sm:mb-0 mb-10">
             <div className="flex items-center space-x-2 bg-white border border-input rounded-lg p-1 focus-within:ring-2 focus-within:ring-ring focus-within:border-primary">
               <Input
@@ -140,12 +147,8 @@ const CopilotComponent = () => {
               <span>Brian Byrne</span>
             </div>
           </div>
-          <div
-            className={cn(
-              "flex items-center justify-between text-muted-foreground text-sm mt-3 border-b-1 border-neutral-300 pb-3",
-              RobotoFont.className
-            )}
-          >
+          <div className={cn("flex items-center justify-between text-muted-foreground text-sm mt-3 border-b-1 border-neutral-300 pb-3",RobotoFont.className)}>
+            
             <span className="ml-6">Team</span>
             <div className="flex gap-x-2 mr-8">
               <RiTeamFill className="text-lg" />
@@ -156,6 +159,7 @@ const CopilotComponent = () => {
           <AccordionDetails />
         </div>
       )}
+
     </div>
   );
 };
