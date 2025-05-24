@@ -8,7 +8,7 @@ Built using **Next.js, TypeScript, Tailwind CSS, Shadcn UI**, and **TanStack Que
 
 ## 🔗 Live Demo
 
-👉 [Click here to view the live app](https://your-deployment-url.com)
+👉 [https://beyond-chats-assingment.vercel.app/](https://beyond-chats-assingment.vercel.app/)
 
 ---
 
