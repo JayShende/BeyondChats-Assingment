@@ -12,7 +12,6 @@ interface MessagePreviewCompoProps{
     name:string;
     message:string;
     time:string;
-    active?:number;
     chatId:number;
 }
 
@@ -20,7 +19,6 @@ const MessagePreviewCompo = ({
     name,
     message,
     time,
-    active,
     chatId
 }:MessagePreviewCompoProps) => {
   
@@ -33,7 +31,7 @@ const MessagePreviewCompo = ({
     >
       <div className="w-full h-16  p-2 flex items-center  ">
         <NameAvatar
-        name={name}
+        id={chatId}
         />
         <div className={cn("flex flex-col ml-3 text-neutral-700",interFont.className)}>
             <span className="font-semibold text-sm ">

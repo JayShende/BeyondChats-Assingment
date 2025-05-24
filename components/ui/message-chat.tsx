@@ -4,15 +4,14 @@ import { RobotoFont } from "@/app/font/font-export";
 
 interface messagesProps {
   message: string;
-  name: string;
-  date?: string;
+  id:number
 }
 
 
-const ChatList = ({ message, name }: messagesProps) => {
+const ChatList = ({ message, id }: messagesProps) => {
   return (
     <div className="flex items-center">
-      <NameAvatar name={name} />
+      <NameAvatar id={id} />
       <div className="bg-neutral-100 m-3  h-auto  w-fit max-[50vw]: rounded-lg  p-4">
         <span className={cn("font-normal",RobotoFont.className)}>
             {message}

@@ -14,8 +14,15 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { interFont, RobotoFont } from "@/app/font/font-export";
 import EmojiPicker from "emoji-picker-react";
+import { useSendMessageBack } from "@/app/services/mutations";
 
-const SendMessage = () => {
+interface sendMessageProps{
+  chatId:number
+}
+
+const SendMessage = ({
+  chatId
+}:sendMessageProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [msgLength, setMsgLength] = useState(0);
   const [msg, setMsg] = useState("");
@@ -23,6 +30,7 @@ const SendMessage = () => {
   const [showTooltip, setshowTooltip] = useState(false);
   const[emojiPicker,setemojiPicker]=useState(false)
 
+  const sendMessageMutation=useSendMessageBack();
 
   const handleEmojiCLick=(emoji)=>{
     setMsg((prevMsg)=>prevMsg+emoji.emoji);
@@ -59,6 +67,16 @@ const SendMessage = () => {
     </button>
   );
 
+  async function handleSendMessage()
+  { 
+    
+    const data={
+      msg:msg,
+      chatId:chatId
+    }
+    console.log(data);
+    sendMessageMutation.mutate(data)
+  }
   return (
     <>
       { emojiPicker&& <div className="fixed bottom-51 left-91 z-50">
@@ -127,7 +145,7 @@ const SendMessage = () => {
                   </TooltipContent>
                 </Tooltip>
               </div>
-              <div>
+              <div onClick={handleSendMessage}>
                 <TooltipProvider>
                   {showTooltip ? (
                     <Tooltip>
