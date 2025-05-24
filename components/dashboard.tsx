@@ -1,24 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import MessagePreviewCompo from "./ui/message-preview";
-import { FaChevronDown } from "react-icons/fa";
 import { interFont, RobotoFont } from "@/app/font/font-export";
 import { FaBookOpen } from "react-icons/fa";
 import { Button } from "./ui/button";
-import { useGetAllChats } from "@/app/services/queries";
-import { messagesLHSPane } from "@/app/types/message-interface";
 import LhsPane from "./lhs-pane";
 
 const DashBoardMain = () => {
-  const getAllChatsLHS = useGetAllChats();
- 
-  if (getAllChatsLHS.isPending) {
-    return <div>Loading</div>;
-  }
-  if (getAllChatsLHS.isError) {
-    return <div>Some Error</div>;
-  }
+
   return (
     <div className="bg-[#eff0eb] w-full h-full flex ">
       <LhsPane/>

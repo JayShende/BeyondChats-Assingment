@@ -37,7 +37,7 @@ const MessagePreviewCompo = ({
             <span className="font-semibold text-sm ">
                 {name}
             </span>
-            <div className="text-sm flex gap-x-16 font-medium">  
+            <div className="text-sm flex gap-x-5 font-medium">  
                 <span>
                     {message.length > 20 ? `${message.slice(0, 20)}...` : message}
                 </span>

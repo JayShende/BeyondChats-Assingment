@@ -8,13 +8,14 @@ import { interFont } from "@/app/font/font-export";
 
 import { useGetAllChats } from "@/app/services/queries";
 import { messagesLHSPane } from "@/app/types/message-interface";
+import SkeletonLhsPane from "./Skeleton/lhs-msg-pane-skeleton";
 const LhsPane = () => {
 
 const getAllChatsLHS = useGetAllChats();
  
-  if (getAllChatsLHS.isPending) {
-    return <div>Loading</div>;
-  }
+  // if (getAllChatsLHS.isPending) {
+  //   return <div>Loading</div>;
+  // }
   if (getAllChatsLHS.isError) {
     return <div>Some Error</div>;
   }
@@ -42,7 +43,7 @@ const getAllChatsLHS = useGetAllChats();
             <FaChevronDown />
           </span>
         </div>
-        <div className="flex flex-col gap-y-3  ">
+       {getAllChatsLHS.isPending? <SkeletonLhsPane/>: <div className="flex flex-col gap-y-3  ">
           {getAllChatsLHS.data.map((card: messagesLHSPane) => (
             <MessagePreviewCompo
               key={card.id}
@@ -52,7 +53,7 @@ const getAllChatsLHS = useGetAllChats();
               chatId={card.id}
             />
           ))}
-        </div>
+        </div>}
       </div>
   )
 };
